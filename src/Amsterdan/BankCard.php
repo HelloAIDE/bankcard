@@ -62,7 +62,14 @@ class BankCard
      */
     public static function alipay($cardNo)
     {
-        $result   = file_get_contents("https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo={$cardNo}&cardBinCheck=true");
+        #增加忽略https证书，防止报错
+        $stream_opts = [
+            "ssl" => [
+                "verify_peer"=>false,
+                "verify_peer_name"=>false,
+            ]
+        ]; 
+        $result   = file_get_contents("https://ccdcapi.alipay.com/validateAndCacheCardInfo.json?_input_charset=utf-8&cardNo={$cardNo}&cardBinCheck=true",false, stream_context_create($stream_opts));
         $result   = json_decode($result);
         $bankInfo = [];
         if ($result->validated) {
