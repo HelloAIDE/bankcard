@@ -1,6 +1,6 @@
 <?php
 
-namespace Amsterdan\BankCard;
+namespace bigniu\BankCard;
 
 /**
  * 银行列表

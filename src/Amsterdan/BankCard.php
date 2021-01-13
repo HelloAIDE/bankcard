@@ -1,6 +1,6 @@
 <?php
 
-namespace Amsterdan;
+namespace bigniu;
 
 class BankCard
 {
@@ -12,7 +12,7 @@ class BankCard
      */
     public static function getBankName($bankCode)
     {
-        return \Amsterdan\BankCard\Lists::getBankName($bankCode);
+        return \bigniu\BankCard\Lists::getBankName($bankCode);
     }
 
     /**
@@ -23,7 +23,7 @@ class BankCard
      */
     public static function getCardTypeName($cardType)
     {
-        return \Amsterdan\BankCard\Types::get($cardType);
+        return \bigniu\BankCard\Types::get($cardType);
     }
 
     /**
@@ -45,7 +45,7 @@ class BankCard
      */
     public static function info($cardNo)
     {
-        $bankInfo = \Amsterdan\BankCard\Lists::getInfo($cardNo);
+        $bankInfo = \bigniu\BankCard\Lists::getInfo($cardNo);
 
         if (empty($bankInfo)) {
             $bankInfo = self::alipay($cardNo);
@@ -90,6 +90,6 @@ class BankCard
      */
     public static function getCodeMap()
     {
-        return \Amsterdan\BankCard\Lists::getCodeMap();
+        return \bigniu\BankCard\Lists::getCodeMap();
     }
 }
