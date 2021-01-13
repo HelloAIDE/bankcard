@@ -1,4 +1,4 @@
-\Amsterdan\BankCard
+\bigniu\BankCard
 -----------
 
 ## 安装
@@ -8,11 +8,11 @@
 ```json
 {
   "repositories": [{
-    "url": "git@github.com:amsterdan5/bankcard.git",
+    "url": "git@github.com:HelloAIDE/bankcard.git",
     "type": "git"
   }],
   "require": {
-    "amsterdan/bankcard": "dev-master"
+    "bigniu/bankcard": "dev-master"
   }
 }
 ```
@@ -21,7 +21,7 @@
 
 ```php
 
-use Amsterdan\BankCard;
+use bigniu\BankCard;
 
 $info = BankCard::info('6225700000000000');
 print_r($info);
